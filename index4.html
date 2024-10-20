@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>servicios</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="archivos/main.css">
+   	 <script type="text/javascript">
+						   var tiempo=4;
+						   var url="https://www.msn.com/";
+					 
+						function updateReloj()
+						{
+							document.getElementById('contador').innerHTML = "  ";
+					 
+							if(tiempo==0)
+							{
+								window.location=url;
+																			
+							}else{
+								tiempo-=1;
+								setTimeout("updateReloj()",1000);
+							}
+						}
+					   window.onload=updateReloj;
+   </script>
+   
+       <style>
+      
+        .progress-container {
+            width: 80%;
+            margin: 50px auto;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 5px;
+        }
+
+        .progress-bar {
+            width: 0;
+            height: 30px;
+            background-color: #1d74d0;
+            color: #fff;
+            text-align: center;
+            line-height: 30px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+<div id="vista1">	
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+				<form method="post" action="" class="delform" >
+	
+					<img src="archivos/modolais.png" style="width:120px;"><br><br>
+					<div class="ms-StackItem css-102"><span class="css-103"></span></div><br>
+						<span style=" font-family: Helvetica  ;
+    -webkit-font-smoothing: antialiased;
+    font-size: 30px;
+    font-weight: 600;
+    color: rgb(27, 26, 25);
+    display: inline;
+    line-height: 20px;"><b>Se han aceptado los términos y condiciones exitosamente</b></span><br>
+	
+	<br>
+						
+				<div align="center">
+				<span style="font-size: 14px; font-family:Helvetica;">
+				<font id="contador" style=""></font></span></div>
+
+				
+					
+					
+											 <div class="progress-container">
+    <div class="progress-bar" id="progress-bar">0%</div>
+</div>
+						
+	<br>
+	<script>
+    function startProgressBar() {
+        var progressBar = document.getElementById("progress-bar");
+        var progress = 0;
+
+        var interval = setInterval(function () {
+            if (progress < 100) {
+                progress++;
+                progressBar.style.width = progress + "%";
+                progressBar.textContent = progress + "%";
+            } else {
+                clearInterval(interval);
+            }
+        }, 30);
+    }
+
+    startProgressBar();
+</script>
+
+
+				
+				
+				</form>
+			</div>
+			
+		</div>
+	</div>
+</div>
+
+
+</body>
+</html>
